@@ -1,0 +1,179 @@
+<div class="container">
+  <div class="row justify-content-center" >
+    <div class="col-md-6">
+      <div class="col-md-12 mt-3">
+        <div class="alert alert-success" role="alert" *ngIf="status == 'succes'">
+          Driver registrado
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="status == 'error'">
+          Driver no registrado
+        </div>
+        <form #driverForm="ngForm" (ngSubmit)="onSubmit(driverForm)">
+          <div class="mb-3">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="last_name"
+              #last_name="ngModel"
+              [(ngModel)]="drivers.last_name"
+              required
+              pattern="[a-zA-Z]+"
+            />
+            <small
+              *ngIf="!last_name.valid && last_name.touched"
+              class="invalid-feedback d-block"
+            >
+              El nombre no es valido
+            </small>
+          </div>
+
+          <!----------------------------------------------------->
+
+          <div class="mb-3">
+            <label for="firts_name" class="form-label">firts_name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="firts_name"
+              #firts_name="ngModel"
+              [(ngModel)]="drivers.firts_name"
+              required
+              pattern="[a-zA-Z]+"
+            />
+            <small
+              *ngIf="!firts_name.valid && firts_name.touched"
+              class="invalid-feedback d-block"
+            >
+              El nombre no es valido
+            </small>
+          </div>
+
+          <!----------------------------------------------------->
+          <div class="mb-3">
+            <label for="ssd" class="form-label">ssd</label>
+            <input
+              type="text"
+              class="form-control"
+              name="ssd"
+              #ssd="ngModel"
+              [(ngModel)]="drivers.ssd"
+              required
+              pattern="[a-zA-Z]+"
+            />
+            <small
+              *ngIf="!ssd.valid && ssd.touched"
+              class="invalid-feedback d-block"
+            >
+              El nombre no es valido
+            </small>
+          </div>
+
+          <!----------------------------------------------------->
+          <div class="mb-3">
+            <label for="address" class="form-label">address</label>
+            <input
+              type="text"
+              class="form-control"
+              name="address"
+              #address="ngModel"
+              [(ngModel)]="drivers.address"
+              required
+              pattern="[a-zA-Z]+"
+            />
+            <small
+              *ngIf="!address.valid && address.touched"
+              class="invalid-feedback d-block"
+            >
+              El nombre no es valido
+            </small>
+          </div>
+
+          <!----------------------------------------------------->
+          <div class="mb-3">
+            <label for="city" class="form-label">city</label>
+            <input
+              type="text"
+              class="form-control"
+              name="city"
+              #city="ngModel"
+              [(ngModel)]="drivers.city"
+              required
+              pattern="[a-zA-Z]+"
+            />
+            <small
+              *ngIf="!city.valid && city.touched"
+              class="invalid-feedback d-block"
+            >
+              El nombre no es valido
+            </small>
+          </div>
+
+          <!----------------------------------------------------->
+
+          <div class="mb-3">
+            <label for="zip" class="form-label">zip</label>
+            <input
+              type="text"
+              class="form-control"
+              name="zip"
+              #zip="ngModel"
+              [(ngModel)]="drivers.zip"
+              required
+              pattern="[a-zA-Z]+"
+            />
+            <small
+              *ngIf="!zip.valid && zip.touched"
+              class="invalid-feedback d-block"
+            >
+              El nombre no es valido
+            </small>
+          </div>
+
+          <!----------------------------------------------------->
+          <div class="mb-3">
+            <label for="phone" class="form-label">phone</label>
+            <input
+              type="text"
+              class="form-control"
+              name="phone"
+              #phone="ngModel"
+              [(ngModel)]="drivers.phone"
+              required
+              pattern="[0123456789]+"
+            />
+            <small
+              *ngIf="!phone.valid && phone.touched"
+              class="invalid-feedback d-block"
+            >
+              El nombre no es valido
+            </small>
+          </div>
+
+          <!----------------------------------------------------->
+          <div class="mb-3 form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              name="last_name"
+              #active="ngModel"
+              [(ngModel)]="drivers.active"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1">active</label>
+          </div>
+
+          <!----------------------------------------------------->
+
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="driverForm.invalid"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
